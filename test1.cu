@@ -86,6 +86,25 @@ int main(int argc, char** argv) {
 
     // copy results from device to host
     cudaMemcpy(h_C, d_C, rowDimA * colDimB * sizeof(float), cudaMemcpyDeviceToHost);
+    
+    // print results
+    printf("Matrix A:\n");
+    for (int i = 0; i < rowDimA; i++) {
+        for (int j = 0; j < colDimA; j++) {
+            printf("%.2f ", h_A[i * colDimA + j]);
+        }
+        printf("\n");
+    }
+
+    // print results
+    printf("Matrix B:\n");
+    for (int i = 0; i < colDimA; i++) {
+        for (int j = 0; j < colDimB; j++) {
+            printf("%.2f ", h_B[i * colDimB + j]);
+        }
+        printf("\n");
+    }
+    
 
     // print results
     printf("Matrix C:\n");
