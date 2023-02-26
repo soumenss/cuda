@@ -121,7 +121,7 @@ int main(int argc, char** argv) {
     printf("Matrix A:\n");
     for (int i = 0; i < rowDimA; i++) {
         for (int j = 0; j < colDimA; j++) {
-            printf("%.3f ", h_A[i * colDimA + j]);
+            printf("%.2f ", h_A[i * colDimA + j]);
         }
         printf("\n");
     }
@@ -129,7 +129,7 @@ int main(int argc, char** argv) {
     printf("Matrix B:\n");
     for (int i = 0; i < colDimA; i++) {
         for (int j = 0; j < colDimB; j++) {
-            printf("%.3f ", h_B[i * colDimB + j]);
+            printf("%.2f ", h_B[i * colDimB + j]);
         }
         printf("\n");
     }
@@ -137,7 +137,7 @@ int main(int argc, char** argv) {
     printf("Matrix C:\n");
     for (int i = 0; i < rowDimA; i++) {
         for (int j = 0; j < colDimB; j++) {
-            printf("%.3f ", h_C[i * colDimB + j]);
+            printf("%.2f ", h_C[i * colDimB + j]);
         }
         printf("\n");
     }
