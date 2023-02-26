@@ -47,10 +47,10 @@ int main(int argc, char** argv) {
     int colDimA = atoi(argv[2]);
     int colDimB = atoi(argv[3]);
 
-    if (colDimA != rowDimB) {
-        printf("error: incompatible matrix dimensions\n");
-        return 1;
-    }
+//     if (colDimA != rowDimB) {
+//         printf("error: incompatible matrix dimensions\n");
+//         return 1;
+//     }
 
     // allocate host memory for matrices A, B, and C
     float *h_A, *h_B, *h_C;
