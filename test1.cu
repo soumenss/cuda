@@ -38,10 +38,12 @@ __global__ void matrixMul(float* A, float* B, float* C, int rowDimA, int colDimA
 }
 
 int main(int argc, char** argv) {
-    if (argc < 4) {
-        printf("usage: ./TiledMatrixMul <rowDimA> <colDimA> <colDimB>\n");
-        return 1;
-    }
+    
+    
+//     if (argc < 4) {
+//         printf("usage: ./TiledMatrixMul <rowDimA> <colDimA> <colDimB>\n");
+//         return 1;
+//     }
 
     int rowDimA = atoi(argv[1]);
     int colDimA = atoi(argv[2]);
