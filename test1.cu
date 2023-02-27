@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define BLOCK_SIZE 32
+#define BLOCK_SIZE 16
 
 __global__ void matrixMul(float* A, float* B, float* C, int rowDimA, int colDimA, int colDimB) {
     __shared__ float As[BLOCK_SIZE][BLOCK_SIZE];
@@ -118,29 +118,29 @@ int main(int argc, char** argv) {
     cudaMemcpy(h_C, d_C, rowDimA * colDimB * sizeof(float), cudaMemcpyDeviceToHost);
     
     // print results
-    printf("Matrix A:\n");
-    for (int i = 0; i < rowDimA; i++) {
-        for (int j = 0; j < colDimA; j++) {
-            printf("%.2f ", h_A[i * colDimA + j]);
-        }
-        printf("\n");
-    }
+//     printf("Matrix A:\n");
+//     for (int i = 0; i < rowDimA; i++) {
+//         for (int j = 0; j < colDimA; j++) {
+//             printf("%.2f ", h_A[i * colDimA + j]);
+//         }
+//         printf("\n");
+//     }
 
-    printf("Matrix B:\n");
-    for (int i = 0; i < colDimA; i++) {
-        for (int j = 0; j < colDimB; j++) {
-            printf("%.2f ", h_B[i * colDimB + j]);
-        }
-        printf("\n");
-    }
+//     printf("Matrix B:\n");
+//     for (int i = 0; i < colDimA; i++) {
+//         for (int j = 0; j < colDimB; j++) {
+//             printf("%.2f ", h_B[i * colDimB + j]);
+//         }
+//         printf("\n");
+//     }
     
-    printf("Matrix C:\n");
-    for (int i = 0; i < rowDimA; i++) {
-        for (int j = 0; j < colDimB; j++) {
-            printf("%.2f ", h_C[i * colDimB + j]);
-        }
-        printf("\n");
-    }
+//     printf("Matrix C:\n");
+//     for (int i = 0; i < rowDimA; i++) {
+//         for (int j = 0; j < colDimB; j++) {
+//             printf("%.2f ", h_C[i * colDimB + j]);
+//         }
+//         printf("\n");
+//     }
 
     // deallocate device memory
     cudaFree(d_A);
