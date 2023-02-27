@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define BLOCK_SIZE 16
+#define BLOCK_SIZE 32
 
 __global__ void matrixMul(float* A, float* B, float* C, int rowDimA, int colDimA, int colDimB) {
     __shared__ float As[BLOCK_SIZE][BLOCK_SIZE];
